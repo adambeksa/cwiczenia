@@ -1,0 +1,20 @@
+{
+  "name": "szablon_pielegniarki",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-autoprefixer": "latest",
+    "grunt-concurrent": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-contrib-pug": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-sass": "latest",
+    "grunt-shell": "latest",
+    "grunt-wiredep": "latest",
+    "matchdep": "latest",
+    "time-grunt": "latest"
+  }
+}

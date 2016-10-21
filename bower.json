@@ -1,0 +1,26 @@
+{
+  "name": "EpanelAnkiety",
+  "version": "1.0.0",
+  "authors": [
+    "Mitch <mmatejunas@softfusion.pl>"
+  ],
+  "description": "EpanelAnkiety",
+  "main": "main.html",
+  "keywords": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "latest",
+    "jquery-selectric": "latest"
+  },
+  "dependencies": {
+    "jquery": "latest",
+    "jquery-selectric": "latest"
+  }
+}
