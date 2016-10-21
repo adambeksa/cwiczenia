@@ -1,0 +1,44 @@
+@charset "UTF-8"
+
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1)
+  @if $b-hsb == 0
+    @return hsla(0, 0, 0, $a)
+  @else
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100))
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2)
+    @return hsla($h-hsb, $s-hsl, $l-hsl, $a)
+
+//header
+$header-bg: #004663
+$header-logo-bg: #ffffff
+$header-search-bg: #012d3f
+
+$header-menu-bg-hover: #012d3f
+$header-menu-bg-hover-alfa-2: rgba(1, 45, 63, 0.25)
+$header-menu-text-hover: #e37a00
+$header-menu-text-hover-alfa-9: rgba(227, 122, 0, 0.9)
+
+$header-text: #ffffff
+$header-border-bg: #4b6a77
+
+$banner-button-bg: #e37a00
+$banner-button-bg-hover: #009fe3
+
+//yellow
+
+//orange
+$orange: #e37a00
+
+//red
+
+//purple
+
+//blue
+$blue: #009fe3
+
+//green
+
+//gray
+$borderGray: #ececec
+
+//black

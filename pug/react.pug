@@ -1,0 +1,45 @@
+extends _layout.pug
+
+block content
+
+  script(src='//fb.me/react-0.14.7.min.js')
+  script(src='//fb.me/react-dom-0.14.7.min.js')
+  link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+
+  .container#container
+
+  script.
+    var TweetBox = React.createClass({displayName: 'TweetBox',
+      getInitialState: function() {
+        return {
+          text: ""
+      };
+    },
+    handleChange: function(event) {
+      this.setState({ text: event.target.value });
+      },
+
+    togglePhoto: function (event) {
+      this.setState({photoAdded: !this.state.photoAdded});
+    },
+      render: function() {
+      return (
+        React.createElement("div", {className: "well clearfix"},
+        React.createElement("textarea", {className: "form-control",
+        onChange: this.handleChange}
+        ),
+          React.createElement("br", null),
+          React.createElement("span", null, 140 - this.state.text.length),
+          React.createElement("button", {className: "btn btn-primary pull-right",
+          disabled: this.state.text.length === 0}, "Tweet"),
+          React.createElement("button", {className: "btn btn-default pull-right", onClick: this.togglePhoto},
+          this.state.photoAdded ? "✓ Photo Added" : "Add Photo")
+        )
+    );
+    }
+    });
+
+    ReactDOM.render(
+    React.createElement(TweetBox, null),
+    document.getElementById("container")
+    );

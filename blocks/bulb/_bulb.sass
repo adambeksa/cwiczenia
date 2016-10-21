@@ -1,0 +1,42 @@
+@charset "UTF-8"
+
+
+.bulb
+
+  &__content
+
+  &__item
+    position: absolute
+    right: 20vw
+    top: 40%
+    transform: translate(0,-50%)
+    overflow: hidden
+    width: 300px
+    height: 450px
+    +TAB_MAX
+      right: 100px
+      width: 250px
+      height: 380px
+    +TAB_ONLY_800
+      position: absolute
+      top: 230px
+      display: flex
+      justify-content: center
+      width: 200px
+      height: 300px
+    +PHONE_ONLY_480
+      width: 150px
+      height: 230px
+      right: 20px
+
+  &__image
+    width: 100%
+    #on
+      path
+       transition: all 0.5s
+       fill: #FFFFFF
+
+    &.-active
+      #on
+        path
+          fill: #FFDB55
