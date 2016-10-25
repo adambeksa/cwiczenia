@@ -1,8 +1,8 @@
 {
-  "name": "EpanelAnkiety",
+  "name": "Cwiczenia",
   "version": "1.0.0",
   "authors": [
-    "Mitch <mmatejunas@softfusion.pl>"
+    "Adam <abeksa@softfusion.pl>"
   ],
   "description": "EpanelAnkiety",
   "main": "main.html",
@@ -17,10 +17,12 @@
   ],
   "devDependencies": {
     "jquery": "latest",
-    "jquery-selectric": "latest"
+    "jquery-selectric": "latest",
+    "imagesloaded": "latest"
   },
   "dependencies": {
     "jquery": "latest",
-    "jquery-selectric": "latest"
+    "jquery-selectric": "latest",
+    "imagesloaded": "latest"
   }
 }

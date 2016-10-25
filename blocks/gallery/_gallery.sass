@@ -2354,7 +2354,6 @@ html
     box-sizing: inherit
 
 body
-  background: #fff
   font-family: 'Roboto', sans-serif
   color: #434343
 
@@ -4681,18 +4680,19 @@ html.mm-opening .mm-slideout
 
 
 
+.gallery
+  span
+    padding-bottom: 4px
+    cursor: pointer
+    overflow: hidden
+    position: relative
+    color: orange
+    @keyframes border-bottom
+      from
+        width: 0
 
-span
-  padding-bottom: 3px
-  cursor: pointer
-  overflow: hidden
-  position: relative
-  @keyframes border-bottom
-    from
-      width: 0
-
-    100%
-      width: 100%
+      100%
+        width: 100%
 
 
   &:hover
@@ -4716,9 +4716,6 @@ span
       bottom: 0
       height: 2px
       background-color: orange
-
-
-
 
 
 .realisation-gallery-image

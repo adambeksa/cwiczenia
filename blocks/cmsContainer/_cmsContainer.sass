@@ -1,0 +1,194 @@
+@charset "UTF-8"
+
+.cmsContainer
+  padding: 0
+  width: 100%
+
+  // STYLE OGÓLNE
+  blockquote
+    font-size: 18px
+    padding: 25px 65px
+    text-align: center
+    border-bottom: 3px solid black
+    border-top: 3px solid black
+    margin-bottom: 25px
+    +PHONE_ONLY
+      font-size: 16px
+
+  img
+    max-width: 100%
+    height: auto
+    display: block
+    &.-floatRight
+      float: right
+      +PHONE_ONLY
+        float: none
+
+  h1
+    font-size: 18px
+    font-weight: normal
+    line-height: 1.2
+    position: relative
+    padding-bottom: 15px
+    cursor: default
+    +PHONE_ONLY
+      font-size: 16px
+
+  h2
+    font-size: 24px
+    font-weight: normal
+    line-height: 1.2
+    margin-bottom: 30px
+    cursor: default
+    +PHONE_ONLY
+      font-size: 22px
+
+  h3
+    font-size: 14px
+    font-weight: normal
+    line-height: 1.2
+    padding-bottom: 15px
+    padding-top: 10px
+    color: #767575
+    cursor: default
+    +PHONE_ONLY
+      font-size: 12px
+
+  h4
+    font-size: 14px
+    font-weight: normal
+    line-height: 1.2
+    padding-bottom: 25px
+    cursor: default
+    +PHONE_ONLY
+      font-size: 12px
+
+  p
+    font-size: 14px
+    font-weight: normal
+    line-height: 1.7
+    color: #767575
+    padding-bottom: 30px
+    +PHONE_ONLY
+      font-size: 12px
+
+  ul
+    margin-bottom: 40px
+    li
+      counter-increment: none
+      font-size: 14px
+      line-height: 1.6
+      margin-bottom: 10px
+      color: #343434
+      position: relative
+      +PHONE_ONLY
+        font-size: 12px
+      &::before
+        content: '\f105'
+        font-family: FontAwesome
+        font-size: 14px
+        font-weight: bold
+        color: black
+        font-style: normal
+        position: relative
+        left: inherit
+        top: inherit
+        margin-right: 10px
+        +PHONE_ONLY
+          font-size: 12px
+    &.-noMargin
+      margin-bottom: 30px
+      li
+        margin-bottom: 0
+        font-weight: 700
+
+  ol
+    padding-left: 35px
+    li
+      counter-increment: step-counter
+      font-size: 14px
+      line-height: 1.6
+      margin-bottom: 25px
+      color: #767575
+      position: relative
+      +PHONE_ONLY
+        font-size: 12px
+      &::before
+        content: counter(step-counter)
+        font-size: 30px
+        font-weight: bold
+        color: black
+        font-style: italic
+        position: absolute
+        left: -35px
+        top: -18px
+        +PHONE_ONLY
+          font-size: 28px
+
+      ul
+        padding-left: 15px
+        padding-top: 10px
+        li
+          counter-increment: none
+          font-size: 14px
+          line-height: 1.6
+          margin-bottom: 5px
+          color: #343434
+          position: relative
+          +PHONE_ONLY
+            font-size: 12px
+          &::before
+            content: '\f105'
+            font-family: FontAwesome
+            font-size: 14px
+            font-weight: bold
+            color: black
+            font-style: normal
+            position: relative
+            left: inherit
+            top: inherit
+            margin-right: 10px
+            +PHONE_ONLY
+              font-size: 12px
+
+  img
+    max-width: 100%
+    height: auto
+    display: block
+    margin-bottom: 30px
+
+  i
+    font-style: italic
+
+  strong
+    font-weight: bold
+
+  iframe
+    position: relative
+    margin: 0 auto
+    width: 100%
+    display: block
+
+  table
+    width: 100%
+    border: 1px solid #d7d7d7
+    padding: 1px
+    margin-bottom: 30px
+    tr
+      width: 100%
+      border-bottom: 1px solid #d7d7d7
+      margin: 1px
+    th
+      background-color: black
+      color: white
+      padding: 15px 0
+      font-size: 18px
+      border: 1px solid transparent
+      +PHONE_ONLY
+        font-size: 16px
+    td
+      padding: 15px
+      font-size: 14px
+      color: #767575
+      +PHONE_ONLY
+        font-size: 12px
