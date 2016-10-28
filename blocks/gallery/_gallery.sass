@@ -4680,13 +4680,12 @@ html.mm-opening .mm-slideout
 
 
 
-.gallery
+ul#menu-realizacje.menu
   span
     padding-bottom: 4px
     cursor: pointer
     overflow: hidden
     position: relative
-    color: orange
     @keyframes border-bottom
       from
         width: 0
@@ -4694,28 +4693,27 @@ html.mm-opening .mm-slideout
       100%
         width: 100%
 
+    &:hover
+      &:after
+        animation-name: fadeIn
+        animation-duration: 0.5s
+        content: " "
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        height: 2px
+        background-color: orange
 
-  &:hover
-    &:after
-      animation-name: fadeIn
-      animation-duration: 0.5s
-      content: " "
-      position: absolute
-      left: 0
-      right: 0
-      bottom: 0
-      height: 2px
-      background-color: orange
-
-  &.-active
-    &:before
-      content: " "
-      position: absolute
-      left: 0
-      right: 0
-      bottom: 0
-      height: 2px
-      background-color: orange
+    &.-active
+      &:before
+        content: " "
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        height: 2px
+        background-color: orange
 
 
 .realisation-gallery-image
