@@ -1,0 +1,140 @@
+@charset "UTF-8"
+
+.carCounter
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+  &__content
+    display: flex
+    flex-wrap: wrap
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+
+  &__cols
+    width: 49.99%
+    padding: 0 30px
+
+  &__circles
+    width: 300px
+    height: 300px
+    border-radius: 50%
+    background-color: rgb(209,158,5)
+    position: relative
+    overflow: hidden
+
+  &__tipCircle
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    background-color: black
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%) rotate(10deg)
+    &:after
+      content: " "
+      position: absolute
+      left: 0
+      bottom: 0
+      width: 20px
+      height: 20px
+      background-color: black
+
+  &__tip
+    width: 3px
+    height: 120px
+    background-color: #e50000
+    transform: rotate(50deg)
+    position: absolute
+    top: 8px
+    left: -35px
+
+  &__scale
+    width: 3px
+    height: 10px
+    background-color: #dddddd
+    position: absolute
+    left: 50%
+    top: 93%
+    transform-origin: 0 -1300%
+    $rays: 36
+    $step: 360 / $rays
+    @for $i from 1 through $rays
+      &:nth-of-type(#{$i})
+        transform: rotate(#{($i - 1) * $step}deg)
+
+    .-rpm &
+      &:nth-child(4n+3)
+        width: 5px
+        &:before
+          content: " "
+          position: absolute
+          width: 5px
+          height: 3px
+          background-color: #dddddd
+          top: -3px
+        &:after
+          content: " "
+          position: absolute
+          width: 5px
+          height: 3px
+          background-color: #dddddd
+          bottom: -3px
+
+    .-speed &
+      &:nth-child(2n+3)
+        width: 5px
+        &:before
+          content: " "
+          position: absolute
+          width: 5px
+          height: 3px
+          background-color: #dddddd
+          top: -3px
+        &:after
+          content: " "
+          position: absolute
+          width: 5px
+          height: 3px
+          background-color: #dddddd
+          bottom: -3px
+
+  &__cover
+    width: 300px
+    height: 120px
+    background-color: rgb(209,158,5)
+    position: absolute
+    bottom: -50px
+
+  &__info
+    position: absolute
+    left: 50%
+    bottom: 65px
+    transform: translate(-50%,0)
+    font-weight: bold
+
+  &__mark
+    position: absolute
+    left: 50%
+    top: 65px
+    transform: translate(-50%,0)
+    font-weight: bold
+    +fontDamion
+    font-size: 24px
+
+  &__lights
+    position: absolute
+    left: 50%
+    top: 65px
+    transform: translate(-50%,0)
+    font-size: 24px
+    color: rgb(49,232,136)
+    i
+      transform: rotate(-10deg)  translate(-2px,1px)
+      font-weight: normal
+      font-size: 20px

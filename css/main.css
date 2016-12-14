@@ -6,6 +6,7 @@
 /* FONT PATH
  * -------------------------- */
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300&subset=latin,latin-ext);
+@import url("https://fonts.googleapis.com/css?family=Damion");
 @font-face {
   font-family: 'FontAwesome';
   src: url("../blocks/vendor/font-awesome/fonts/fontawesome-webfont.eot?v=4.5.0");
@@ -3037,7 +3038,7 @@ input[type="submit"] {
   *========================================================================== */
 body {
   min-width: 320px;
-  background: #1E1E20;
+  background-color: #1E1E20;
 }
 
 .clearfix:before, .clearfix:after {
@@ -3373,10 +3374,6 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
 }
 
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
@@ -6308,46 +6305,6 @@ td, th {
 /*--------------------------------------------------------------
  *# Typography
  *-------------------------------------------------------------- */
-body, button, input, select, textarea {
-  color: #404040;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  clear: both;
-}
-
-p {
-  margin-bottom: 10px;
-}
-
-dfn, cite, em, i {
-  font-style: italic;
-}
-
-blockquote {
-  margin: 0 10px;
-}
-
-address {
-  margin: 0 0 10px;
-}
-
-pre {
-  background: #eee;
-  font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  margin-bottom: 1.6em;
-  max-width: 100%;
-  overflow: auto;
-  padding: 1.6em;
-}
-
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 15px;
@@ -6382,12 +6339,6 @@ html {
 
 *:before, *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  box-sizing: inherit;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  color: #434343;
 }
 
 blockquote:before, blockquote:after {
@@ -9125,13 +9076,6 @@ ul#menu-realizacje.menu span.-active:before {
 }
 
 /* Basic sample */
-body {
-  overflow: hidden;
-  background-color: #fcfcfc;
-  margin: 0;
-  padding: 0;
-}
-
 .flipbook-viewport {
   overflow: hidden;
   width: 100%;
@@ -9494,4 +9438,416 @@ body {
   .cmsContainer table td {
     font-size: 12px;
   }
+}
+
+.game {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1e1e1e;
+}
+
+.game__square {
+  width: 50px;
+  height: 50px;
+  background-color: #ff7461;
+  animation: myOrbit 2s infinite;
+  display: none;
+}
+
+@keyframes myOrbit {
+  from {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+.game__yourShip {
+  width: 50px;
+  height: 50px;
+  background-color: #ff7461;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+}
+
+.game__ammo {
+  width: 5px;
+  height: 5px;
+  background-color: #ffd109;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+}
+
+.game__ammo.-run {
+  bottom: 100%;
+  transition: all 0.3s;
+}
+
+.game__enemy {
+  width: 100%;
+  text-align: center;
+}
+
+.game__enemySquare {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: #ff7461;
+}
+
+.carCounter {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.carCounter__content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+
+.carCounter__cols {
+  width: 49.99%;
+  padding: 0 30px;
+}
+
+.carCounter__circles {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #d19e05;
+  position: relative;
+  overflow: hidden;
+}
+
+.carCounter__tipCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%) rotate(10deg);
+      transform: translate(-50%, -50%) rotate(10deg);
+}
+
+.carCounter__tipCircle:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+}
+
+.carCounter__tip {
+  width: 3px;
+  height: 120px;
+  background-color: #e50000;
+  -ms-transform: rotate(50deg);
+      transform: rotate(50deg);
+  position: absolute;
+  top: 8px;
+  left: -35px;
+}
+
+.carCounter__scale {
+  width: 3px;
+  height: 10px;
+  background-color: #dddddd;
+  position: absolute;
+  left: 50%;
+  top: 93%;
+  -ms-transform-origin: 0 -1300%;
+      transform-origin: 0 -1300%;
+}
+
+.carCounter__scale:nth-of-type(1) {
+  -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+}
+
+.carCounter__scale:nth-of-type(2) {
+  -ms-transform: rotate(10deg);
+      transform: rotate(10deg);
+}
+
+.carCounter__scale:nth-of-type(3) {
+  -ms-transform: rotate(20deg);
+      transform: rotate(20deg);
+}
+
+.carCounter__scale:nth-of-type(4) {
+  -ms-transform: rotate(30deg);
+      transform: rotate(30deg);
+}
+
+.carCounter__scale:nth-of-type(5) {
+  -ms-transform: rotate(40deg);
+      transform: rotate(40deg);
+}
+
+.carCounter__scale:nth-of-type(6) {
+  -ms-transform: rotate(50deg);
+      transform: rotate(50deg);
+}
+
+.carCounter__scale:nth-of-type(7) {
+  -ms-transform: rotate(60deg);
+      transform: rotate(60deg);
+}
+
+.carCounter__scale:nth-of-type(8) {
+  -ms-transform: rotate(70deg);
+      transform: rotate(70deg);
+}
+
+.carCounter__scale:nth-of-type(9) {
+  -ms-transform: rotate(80deg);
+      transform: rotate(80deg);
+}
+
+.carCounter__scale:nth-of-type(10) {
+  -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+}
+
+.carCounter__scale:nth-of-type(11) {
+  -ms-transform: rotate(100deg);
+      transform: rotate(100deg);
+}
+
+.carCounter__scale:nth-of-type(12) {
+  -ms-transform: rotate(110deg);
+      transform: rotate(110deg);
+}
+
+.carCounter__scale:nth-of-type(13) {
+  -ms-transform: rotate(120deg);
+      transform: rotate(120deg);
+}
+
+.carCounter__scale:nth-of-type(14) {
+  -ms-transform: rotate(130deg);
+      transform: rotate(130deg);
+}
+
+.carCounter__scale:nth-of-type(15) {
+  -ms-transform: rotate(140deg);
+      transform: rotate(140deg);
+}
+
+.carCounter__scale:nth-of-type(16) {
+  -ms-transform: rotate(150deg);
+      transform: rotate(150deg);
+}
+
+.carCounter__scale:nth-of-type(17) {
+  -ms-transform: rotate(160deg);
+      transform: rotate(160deg);
+}
+
+.carCounter__scale:nth-of-type(18) {
+  -ms-transform: rotate(170deg);
+      transform: rotate(170deg);
+}
+
+.carCounter__scale:nth-of-type(19) {
+  -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+}
+
+.carCounter__scale:nth-of-type(20) {
+  -ms-transform: rotate(190deg);
+      transform: rotate(190deg);
+}
+
+.carCounter__scale:nth-of-type(21) {
+  -ms-transform: rotate(200deg);
+      transform: rotate(200deg);
+}
+
+.carCounter__scale:nth-of-type(22) {
+  -ms-transform: rotate(210deg);
+      transform: rotate(210deg);
+}
+
+.carCounter__scale:nth-of-type(23) {
+  -ms-transform: rotate(220deg);
+      transform: rotate(220deg);
+}
+
+.carCounter__scale:nth-of-type(24) {
+  -ms-transform: rotate(230deg);
+      transform: rotate(230deg);
+}
+
+.carCounter__scale:nth-of-type(25) {
+  -ms-transform: rotate(240deg);
+      transform: rotate(240deg);
+}
+
+.carCounter__scale:nth-of-type(26) {
+  -ms-transform: rotate(250deg);
+      transform: rotate(250deg);
+}
+
+.carCounter__scale:nth-of-type(27) {
+  -ms-transform: rotate(260deg);
+      transform: rotate(260deg);
+}
+
+.carCounter__scale:nth-of-type(28) {
+  -ms-transform: rotate(270deg);
+      transform: rotate(270deg);
+}
+
+.carCounter__scale:nth-of-type(29) {
+  -ms-transform: rotate(280deg);
+      transform: rotate(280deg);
+}
+
+.carCounter__scale:nth-of-type(30) {
+  -ms-transform: rotate(290deg);
+      transform: rotate(290deg);
+}
+
+.carCounter__scale:nth-of-type(31) {
+  -ms-transform: rotate(300deg);
+      transform: rotate(300deg);
+}
+
+.carCounter__scale:nth-of-type(32) {
+  -ms-transform: rotate(310deg);
+      transform: rotate(310deg);
+}
+
+.carCounter__scale:nth-of-type(33) {
+  -ms-transform: rotate(320deg);
+      transform: rotate(320deg);
+}
+
+.carCounter__scale:nth-of-type(34) {
+  -ms-transform: rotate(330deg);
+      transform: rotate(330deg);
+}
+
+.carCounter__scale:nth-of-type(35) {
+  -ms-transform: rotate(340deg);
+      transform: rotate(340deg);
+}
+
+.carCounter__scale:nth-of-type(36) {
+  -ms-transform: rotate(350deg);
+      transform: rotate(350deg);
+}
+
+.-rpm .carCounter__scale:nth-child(4n+3) {
+  width: 5px;
+}
+
+.-rpm .carCounter__scale:nth-child(4n+3):before {
+  content: " ";
+  position: absolute;
+  width: 5px;
+  height: 3px;
+  background-color: #dddddd;
+  top: -3px;
+}
+
+.-rpm .carCounter__scale:nth-child(4n+3):after {
+  content: " ";
+  position: absolute;
+  width: 5px;
+  height: 3px;
+  background-color: #dddddd;
+  bottom: -3px;
+}
+
+.-speed .carCounter__scale:nth-child(2n+3) {
+  width: 5px;
+}
+
+.-speed .carCounter__scale:nth-child(2n+3):before {
+  content: " ";
+  position: absolute;
+  width: 5px;
+  height: 3px;
+  background-color: #dddddd;
+  top: -3px;
+}
+
+.-speed .carCounter__scale:nth-child(2n+3):after {
+  content: " ";
+  position: absolute;
+  width: 5px;
+  height: 3px;
+  background-color: #dddddd;
+  bottom: -3px;
+}
+
+.carCounter__cover {
+  width: 300px;
+  height: 120px;
+  background-color: #d19e05;
+  position: absolute;
+  bottom: -50px;
+}
+
+.carCounter__info {
+  position: absolute;
+  left: 50%;
+  bottom: 65px;
+  -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+  font-weight: bold;
+}
+
+.carCounter__mark {
+  position: absolute;
+  left: 50%;
+  top: 65px;
+  -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+  font-weight: bold;
+  font-family: 'Damion', cursive;
+  font-size: 24px;
+}
+
+.carCounter__lights {
+  position: absolute;
+  left: 50%;
+  top: 65px;
+  -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+  font-size: 24px;
+  color: #31e888;
+}
+
+.carCounter__lights i {
+  -ms-transform: rotate(-10deg) translate(-2px, 1px);
+      transform: rotate(-10deg) translate(-2px, 1px);
+  font-weight: normal;
+  font-size: 20px;
 }

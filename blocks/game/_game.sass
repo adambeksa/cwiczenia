@@ -1,0 +1,57 @@
+@charset "UTF-8"
+
+.game
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background-color: #1e1e1e
+
+  &__square
+    width: 50px
+    height: 50px
+    background-color: #ff7461
+    animation: myOrbit 2s infinite
+    display: none
+    @keyframes myOrbit
+      from
+        transform: rotate(0deg) translateX(150px) rotate(0deg)
+      to
+        transform: rotate(360deg) translateX(150px) rotate(-360deg)
+
+
+  &__yourShip
+    width: 50px
+    height: 50px
+    background-color: #ff7461
+    position: absolute
+    bottom: 50px
+    left: 50%
+    transform: translate(-50%,0)
+
+  &__ammo
+    width: 5px
+    height: 5px
+    background-color: #ffd109
+    position: absolute
+    bottom: 50px
+    left: 50%
+    transform: translate(-50%,0)
+
+    &.-run
+      bottom: 100%
+      transition: all 0.3s
+
+
+  &__enemy
+    width: 100%
+    text-align: center
+
+  &__enemySquare
+    width: 20px
+    height: 20px
+    display: inline-block
+    background-color: #ff7461
+
+
