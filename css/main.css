@@ -5,7 +5,7 @@
  */
 /* FONT PATH
  * -------------------------- */
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300&subset=latin,latin-ext);
+@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&subset=latin-ext");
 @import url("https://fonts.googleapis.com/css?family=Damion");
 @font-face {
   font-family: 'FontAwesome';
@@ -9511,13 +9511,25 @@ ul#menu-realizacje.menu span.-active:before {
   bottom: 0;
   left: 0;
   right: 0;
+  background-color: #3e3e3e;
+}
+
+.carCounter__heading {
+  color: #e2e2e2;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 150px;
 }
 
 .carCounter__content {
+  width: 1000px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-align: center;
+      align-items: center;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -9526,29 +9538,51 @@ ul#menu-realizacje.menu span.-active:before {
 }
 
 .carCounter__cols {
-  width: 49.99%;
+  width: 33.33%;
   padding: 0 30px;
+  position: relative;
+  min-height: 300px;
+}
+
+.carCounter__cols.-speed {
+  min-height: 350px;
 }
 
 .carCounter__circles {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background-color: #d19e05;
-  position: relative;
+  background: #282828;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
   overflow: hidden;
+  color: #e2e2e2;
+}
+
+.-speed .carCounter__circles {
+  width: 350px;
+  height: 350px;
 }
 
 .carCounter__tipCircle {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: black;
+  background-color: #161616;
   position: absolute;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%) rotate(10deg);
       transform: translate(-50%, -50%) rotate(10deg);
+  animation-duration: 2s;
+}
+
+.-speed .carCounter__tipCircle {
+  animation-duration: 3s;
 }
 
 .carCounter__tipCircle:after {
@@ -9558,24 +9592,45 @@ ul#menu-realizacje.menu span.-active:before {
   bottom: 0;
   width: 20px;
   height: 20px;
-  background-color: black;
+  background-color: #161616;
+}
+
+.carCounter .animation {
+  animation-name: tip;
+}
+
+@keyframes tip {
+  from {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(250deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
 }
 
 .carCounter__tip {
   width: 3px;
-  height: 120px;
+  height: 125px;
   background-color: #e50000;
   -ms-transform: rotate(50deg);
       transform: rotate(50deg);
   position: absolute;
   top: 8px;
-  left: -35px;
+  left: -38px;
+}
+
+.-rpm .carCounter__tip {
+  height: 110px;
+  left: -30px;
 }
 
 .carCounter__scale {
   width: 3px;
   height: 10px;
-  background-color: #dddddd;
+  background-color: #e2e2e2;
   position: absolute;
   left: 50%;
   top: 93%;
@@ -9771,8 +9826,8 @@ ul#menu-realizacje.menu span.-active:before {
   content: " ";
   position: absolute;
   width: 5px;
-  height: 3px;
-  background-color: #dddddd;
+  height: 4px;
+  background-color: #e2e2e2;
   top: -3px;
 }
 
@@ -9780,9 +9835,14 @@ ul#menu-realizacje.menu span.-active:before {
   content: " ";
   position: absolute;
   width: 5px;
-  height: 3px;
-  background-color: #dddddd;
+  height: 4px;
+  background-color: #e2e2e2;
   bottom: -3px;
+}
+
+.-speed .carCounter__scale {
+  -ms-transform-origin: 0 -1500%;
+      transform-origin: 0 -1500%;
 }
 
 .-speed .carCounter__scale:nth-child(2n+3) {
@@ -9793,8 +9853,8 @@ ul#menu-realizacje.menu span.-active:before {
   content: " ";
   position: absolute;
   width: 5px;
-  height: 3px;
-  background-color: #dddddd;
+  height: 4px;
+  background-color: #e2e2e2;
   top: -3px;
 }
 
@@ -9802,17 +9862,22 @@ ul#menu-realizacje.menu span.-active:before {
   content: " ";
   position: absolute;
   width: 5px;
-  height: 3px;
-  background-color: #dddddd;
+  height: 4px;
+  background-color: #e2e2e2;
   bottom: -3px;
 }
 
 .carCounter__cover {
   width: 300px;
   height: 120px;
-  background-color: #d19e05;
+  background: #282828;
   position: absolute;
   bottom: -50px;
+}
+
+.-speed .carCounter__cover {
+  width: 350px;
+  bottom: -40px;
 }
 
 .carCounter__info {
@@ -9821,7 +9886,11 @@ ul#menu-realizacje.menu span.-active:before {
   bottom: 65px;
   -ms-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
-  font-weight: bold;
+  font-weight: 800;
+}
+
+.-speed .carCounter__info {
+  bottom: 85px;
 }
 
 .carCounter__mark {
@@ -9842,7 +9911,7 @@ ul#menu-realizacje.menu span.-active:before {
   -ms-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
   font-size: 24px;
-  color: #31e888;
+  color: #2fdd82;
 }
 
 .carCounter__lights i {
@@ -9850,4 +9919,163 @@ ul#menu-realizacje.menu span.-active:before {
       transform: rotate(-10deg) translate(-2px, 1px);
   font-weight: normal;
   font-size: 20px;
+}
+
+.carCounter__fuel {
+  margin: 20px 0 5px 0;
+  font-weight: 800;
+  font-size: 20px;
+  text-align: center;
+}
+
+.carCounter__fuel span {
+  padding-left: 3px;
+  font-size: 14px;
+}
+
+.carCounter__mainInfo {
+  padding-left: 45px;
+  border-top: 2px solid #161616;
+  border-bottom: 2px solid #9f0000;
+  font-weight: 800;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.carCounter__carInfo {
+  padding-left: 45px;
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.carCounter__carInfo.-last {
+  border-bottom: 2px solid #9f0000;
+  padding-bottom: 5px;
+}
+
+.carCounter__time {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.carCounter__time:before {
+  content: "\f017";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 2px;
+  left: 100px;
+}
+
+.carCounter__weather {
+  text-align: center;
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+}
+
+.carCounter__weather:before {
+  content: "\f185";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0px;
+  left: 102px;
+}
+
+.carCounter__engine {
+  position: absolute;
+  top: 130px;
+  right: 80px;
+  font-weight: 800;
+  width: 50px;
+  height: 40px;
+  background-size: cover;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Motorkontrollleuchte.svg/1280px-Motorkontrollleuchte.svg.png");
+}
+
+.carCounter__battery {
+  position: absolute;
+  top: 130px;
+  left: 80px;
+  font-weight: 800;
+  width: 40px;
+  height: 26px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("http://www.rjmobileautos.co.uk/files/large/96c3c1f6640efabe5a20a04e5bb7520e.png");
+}
+
+.carCounter__airbag {
+  position: absolute;
+  top: 100px;
+  right: 70px;
+  font-weight: 800;
+  width: 35px;
+  height: 33px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("http://www.rjmobileautos.co.uk/files/large/41340467663840f54bfa827ca4b91f5e.png");
+}
+
+.carCounter__oil {
+  position: absolute;
+  top: 130px;
+  left: 70px;
+  font-weight: 800;
+  width: 47px;
+  height: 18px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("http://pt.cruiser.repair/wp-content/uploads/2014/09/chrysler_pt_cruiser_oil_pressure_warning_light.png");
+}
+
+.carCounter .-icon {
+  transition: all 0.3s;
+}
+
+.carCounter__km {
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%);
+      transform: translate(-50%);
+  bottom: 50px;
+  font-weight: 800;
+  text-align: center;
+  display: block;
+  background-color: black;
+  padding: 0 3px;
+  height: 22px;
+  overflow: hidden;
+}
+
+.carCounter__km span {
+  color: white;
+  background-color: black;
+  padding: 0 2px;
+  height: 22px;
+}
+
+.carCounter__km span:last-child {
+  background-color: white;
+  color: black;
+  position: relative;
+  display: inline-block;
+  -ms-transform: translateY(-8px);
+      transform: translateY(-8px);
+  height: 20px;
+}
+
+.carCounter__km span:last-child:after {
+  content: "4";
+  position: absolute;
+  top: 100%;
+  background-color: white;
+  left: 0;
+  padding: 0 2px;
+  line-height: 1;
+  border-top: 1px solid black;
 }

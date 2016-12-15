@@ -6,36 +6,63 @@
   bottom: 0
   left: 0
   right: 0
+  background-color: #3e3e3e
+
+  &__heading
+    color: #e2e2e2
+    font-size: 36px
+    font-weight: bold
+    text-align: center
+    margin-top: 150px
 
   &__content
+    width: 1000px
     display: flex
     flex-wrap: wrap
+    align-items: center
     position: absolute
     left: 50%
     top: 50%
     transform: translate(-50%,-50%)
 
   &__cols
-    width: 49.99%
+    width: 33.33%
     padding: 0 30px
+    position: relative
+    min-height: 300px
+
+    &.-speed
+      min-height: 350px
 
   &__circles
     width: 300px
     height: 300px
     border-radius: 50%
-    background-color: rgb(209,158,5)
-    position: relative
+    background: #282828
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 50%
+    transform: translate(-50%,0)
     overflow: hidden
+    color: #e2e2e2
+
+    .-speed &
+      width: 350px
+      height: 350px
 
   &__tipCircle
     width: 40px
     height: 40px
     border-radius: 50%
-    background-color: black
+    background-color: #161616
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%,-50%) rotate(10deg)
+    animation-duration: 2s
+    .-speed &
+      animation-duration: 3s
     &:after
       content: " "
       position: absolute
@@ -43,21 +70,38 @@
       bottom: 0
       width: 20px
       height: 20px
-      background-color: black
+      background-color: #161616
+
+  .animation
+    animation-name: tip
+
+    @keyframes tip
+      from
+        transform: translate(-50%,-50%) rotate(10deg)
+
+      50%
+        transform: translate(-50%,-50%) rotate(250deg)
+
+      to
+        transform: translate(-50%,-50%) rotate(10deg)
 
   &__tip
     width: 3px
-    height: 120px
+    height: 125px
     background-color: #e50000
     transform: rotate(50deg)
     position: absolute
     top: 8px
-    left: -35px
+    left: -38px
+    .-rpm &
+      height: 110px
+      left: -30px
+
 
   &__scale
     width: 3px
     height: 10px
-    background-color: #dddddd
+    background-color: #e2e2e2
     position: absolute
     left: 50%
     top: 93%
@@ -75,48 +119,54 @@
           content: " "
           position: absolute
           width: 5px
-          height: 3px
-          background-color: #dddddd
+          height: 4px
+          background-color: #e2e2e2
           top: -3px
         &:after
           content: " "
           position: absolute
           width: 5px
-          height: 3px
-          background-color: #dddddd
+          height: 4px
+          background-color: #e2e2e2
           bottom: -3px
 
     .-speed &
+      transform-origin: 0 -1500%
       &:nth-child(2n+3)
         width: 5px
         &:before
           content: " "
           position: absolute
           width: 5px
-          height: 3px
-          background-color: #dddddd
+          height: 4px
+          background-color: #e2e2e2
           top: -3px
         &:after
           content: " "
           position: absolute
           width: 5px
-          height: 3px
-          background-color: #dddddd
+          height: 4px
+          background-color: #e2e2e2
           bottom: -3px
 
   &__cover
     width: 300px
     height: 120px
-    background-color: rgb(209,158,5)
+    background: #282828
     position: absolute
     bottom: -50px
+    .-speed &
+      width: 350px
+      bottom: -40px
 
   &__info
     position: absolute
     left: 50%
     bottom: 65px
     transform: translate(-50%,0)
-    font-weight: bold
+    font-weight: 800
+    .-speed &
+      bottom: 85px
 
   &__mark
     position: absolute
@@ -133,8 +183,142 @@
     top: 65px
     transform: translate(-50%,0)
     font-size: 24px
-    color: rgb(49,232,136)
+    color: rgb(47, 221, 130)
     i
       transform: rotate(-10deg)  translate(-2px,1px)
       font-weight: normal
       font-size: 20px
+
+  &__fuel
+    margin: 20px 0 5px 0
+    font-weight: 800
+    font-size: 20px
+    text-align: center
+    span
+      padding-left: 3px
+      font-size: 14px
+
+  &__mainInfo
+    padding-left: 45px
+    border-top: 2px solid #161616
+    border-bottom: 2px solid #9f0000
+    font-weight: 800
+    margin-bottom: 5px
+    font-size: 20px
+
+  &__carInfo
+    padding-left: 45px
+    font-size: 18px
+    margin-bottom: 5px
+    font-weight: 600
+    &.-last
+      border-bottom: 2px solid #9f0000
+      padding-bottom: 5px
+
+  &__time
+    text-align: center
+    font-weight: bold
+    font-size: 20px
+    padding-left: 10px
+    position: relative
+    &:before
+      content: "\f017"
+      font-family: FontAwesome
+      position: absolute
+      top: 2px
+      left: 100px
+
+  &__weather
+    text-align: center
+    padding-left: 10px
+    font-weight: bold
+    font-size: 16px
+    position: relative
+    &:before
+      content: "\f185"
+      font-family: FontAwesome
+      position: absolute
+      top: 0px
+      left: 102px
+
+
+  &__engine
+    position: absolute
+    top: 130px
+    right: 80px
+    font-weight: 800
+    width: 50px
+    height: 40px
+    background-size: cover
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Motorkontrollleuchte.svg/1280px-Motorkontrollleuchte.svg.png')
+
+  &__battery
+    position: absolute
+    top: 130px
+    left: 80px
+    font-weight: 800
+    width: 40px
+    height: 26px
+    background-size: cover
+    background-position: center
+    background-image: url('http://www.rjmobileautos.co.uk/files/large/96c3c1f6640efabe5a20a04e5bb7520e.png')
+
+  &__airbag
+    position: absolute
+    top: 100px
+    right: 70px
+    font-weight: 800
+    width: 35px
+    height: 33px
+    background-size: cover
+    background-position: center
+    background-image: url('http://www.rjmobileautos.co.uk/files/large/41340467663840f54bfa827ca4b91f5e.png')
+
+
+  &__oil
+    position: absolute
+    top: 130px
+    left: 70px
+    font-weight: 800
+    width: 47px
+    height: 18px
+    background-size: cover
+    background-position: center
+    background-image: url('http://pt.cruiser.repair/wp-content/uploads/2014/09/chrysler_pt_cruiser_oil_pressure_warning_light.png')
+
+  .-icon
+    transition: all 0.3s
+
+  &__km
+    position: absolute
+    left: 50%
+    transform: translate(-50%)
+    bottom: 50px
+    font-weight: 800
+    text-align: center
+    display: block
+    background-color: black
+    padding: 0 3px
+    height: 22px
+    overflow: hidden
+    span
+      color: white
+      background-color: black
+      padding: 0 2px
+      height: 22px
+      &:last-child
+        background-color: white
+        color: black
+        position: relative
+        display: inline-block
+        transform: translateY(-8px)
+        height: 20px
+        &:after
+          content: "4"
+          position: absolute
+          top: 100%
+          background-color: white
+          left: 0
+          padding: 0 2px
+          line-height: 1
+          border-top: 1px solid black
